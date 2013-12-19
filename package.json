@@ -1,0 +1,24 @@
+{
+  "name": "crudjson",
+  "version": "0.0.0",
+  "description": "serve crud endpoints quickly",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/skhatri/crud-json.git"
+  },
+  "keywords": [
+    "crud",
+    "api",
+    "json"
+  ],
+  "author": "Suresh Khatri",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/skhatri/crud-json/issues"
+  },
+  "homepage": "https://github.com/skhatri/crud-json"
+}
