@@ -356,11 +356,19 @@ module.exports = function (app, options) {
         app.post(deleteUrl, deleteItem);
     }
 
+    var asFunction = function (expr) {
+        var f;
+        if (typeof expr === 'string') {
+            return eval("f=" + expr);
+        }
+        return expr;
+    };
+
     var registerMapping = function (mapping) {
         var mappingUri = options.singlePattern + mapping;
         var mappingInstruction = options.mappings[mapping];
-        var getFn = mappingInstruction['GET'];
-        var postFn = mappingInstruction['POST'];
+        var getFn = asFunction(mappingInstruction['GET']);
+        var postFn = asFunction(mappingInstruction['POST']);
         if (getFn) {
             console.log('GET ' + mappingUri);
             app.get(mappingUri, function (req, res) {
@@ -391,4 +399,3 @@ module.exports = function (app, options) {
         }
     }
 };
-
